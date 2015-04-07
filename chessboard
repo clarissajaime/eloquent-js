@@ -1,0 +1,19 @@
+  
+var chessboard = ""; 
+//every time a row is created (newline loop)
+    for (var j=0; j<8; j++) {
+        //create a row
+      for (var i=0; i<8; i++) {
+          //if the count is even 
+        if ((i + j) % 2 === 0) {
+            //add a hash to the board
+         chessboard += "#";
+        } else {
+            //add a space to the board
+         chessboard += " ";
+        }
+    }
+    //add a newline
+    chessboard += "\n"
+}
+console.log(chessboard)
