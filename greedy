@@ -1,0 +1,38 @@
+function greedy(dollar) {
+	cents = dollar * 100;
+
+	var coins = 0;
+	var text = [];
+	var lastCoin = "";
+
+	if (cents / 25 >= 1) {
+		coins = Math.floor(cents / 25);
+		cents = ( cents % 25 );
+		text.push(coins + " quarters")
+	}
+	if (cents / 10 >= 1) {
+		coins = Math.floor(cents / 10);
+		cents = cents % 10;
+		text.push(coins + " dimes");
+		console.log(text);
+	}
+	if (cents / 5 >= 1) {
+		coins = Math.floor(cents / 5);
+		cents = cents % 5;
+		text.push(coins + " nickles");
+		console.log(text);
+	}
+	if (cents / 1 >= 1) {
+		console.log(cents);
+		coins = Math.floor(cents / 1);
+		cents = cents % 1;
+		text.push(coins + " pennies");
+	}
+	if (text.length > 1) {
+		lastCoin = text.pop();
+		return text.join(", ") + " and " + lastCoin;
+	}
+	return text.pop();
+}
+
+
